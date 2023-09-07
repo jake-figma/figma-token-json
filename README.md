@@ -3,7 +3,8 @@ A JSON representation for Figma Variables following the [W3C Tokens spec](https:
 
 ## Overview
 
-Figma Collections are merged into a single JSON file to support cross-collection aliasing. Each collection is numerically represented incrementally (0, 1, 2, etc) at the root of the JSON object. Example of how you would model two collections, "primitive" and, "semantic" where the semantic has two modes "Light" and "Dark":
+Figma variable collections are merged into a single JSON file to support cross-collection aliasing. Each collection is numerically represented incrementally (0, 1, 2, etc) at the root of the JSON object. Example of how you would model two collections, "primitive" and, "semantic" where the semantic has two modes "Light" and "Dark":
+
 
 ```json
 {
