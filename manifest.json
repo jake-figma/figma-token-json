@@ -1,0 +1,10 @@
+{
+  "name": "Figma Token JSON",
+  "id": "1225498390710809904",
+  "api": "1.0.0",
+  "editorType": ["figma", "dev"],
+  "capabilities": ["inspect"],
+  "permissions": [],
+  "main": "code.js",
+  "networkAccess": { "allowedDomains": ["none"] }
+}
