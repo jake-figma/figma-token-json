@@ -1,14 +1,5 @@
 {
-  "0": {
-    "$extensions": {
-      "com.figma": {
-        "collectionId": "VariableCollectionId:0:1",
-        "fileId": "012340123401234",
-        "type": "collection",
-        "name": "Primitives: Color",
-        "modes": ["Default"]
-      }
-    },
+  "collection_primitives_color": {
     "color": {
       "$type": "color",
       "purple": {
@@ -80,302 +71,415 @@
       }
     }
   },
-  "1": {
+  "collection_semantic_color": {
     "$extensions": {
-      "com.figma": {
-        "collectionId": "VariableCollectionId:0:2",
-        "fileId": "012340123401234",
-        "type": "collection",
-        "name": "Semantic: Color",
-        "modes": ["Light", "Dark"]
+      "org.example": {
+        "modes": ["light", "dark"]
       }
     },
     "color": {
       "$type": "color",
       "text": {
         "text-on-warning": {
-          "$value": "{0.color.yellow.1000}",
+          "$value": "{collection_primitives_color.color.yellow.1000}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.yellow.1000}", "{0.color.yellow.1000}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.yellow.1000}",
+                "dark": "{collection_primitives_color.color.yellow.1000}"
+              }
             }
           }
         },
         "text-on-success": {
-          "$value": "{0.color.green.100}",
+          "$value": "{collection_primitives_color.color.green.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.green.100}", "{0.color.green.900}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.green.100}",
+                "dark": "{collection_primitives_color.color.green.900}"
+              }
             }
           }
         },
         "text-primary": {
-          "$value": "{0.color.black.200}",
+          "$value": "{collection_primitives_color.color.black.200}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.black.200}", "{0.color.white.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.black.200}",
+                "dark": "{collection_primitives_color.color.white.100}"
+              }
             }
           }
         },
         "text-on-critical": {
-          "$value": "{0.color.red.100}",
+          "$value": "{collection_primitives_color.color.red.100}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.100}", "{0.color.red.900}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.100}",
+                "dark": "{collection_primitives_color.color.red.900}"
+              }
+            }
           }
         },
         "text-on-info": {
-          "$value": "{0.color.purple.100}",
+          "$value": "{collection_primitives_color.color.purple.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.purple.100}", "{0.color.purple.900}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.purple.100}",
+                "dark": "{collection_primitives_color.color.purple.900}"
+              }
             }
           }
         },
         "text-on-brand": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.gray.1000}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.gray.1000}"
+              }
             }
           }
         },
         "text-success": {
-          "$value": "{0.color.green.700}",
+          "$value": "{collection_primitives_color.color.green.700}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.green.700}", "{0.color.green.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.green.700}",
+                "dark": "{collection_primitives_color.color.green.100}"
+              }
             }
           }
         },
         "text-brand": {
-          "$value": "{0.color.black.200}",
+          "$value": "{collection_primitives_color.color.black.200}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.black.200}", "{0.color.white.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.black.200}",
+                "dark": "{collection_primitives_color.color.white.100}"
+              }
             }
           }
         },
         "text-on-primary": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.gray.1000}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.gray.1000}"
+              }
             }
           }
         },
         "text-link": {
           "$value": "{text.text-brand}",
           "$extensions": {
-            "com.figma": { "modes": ["{text.text-brand}", "{text.text-brand}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{text.text-brand}",
+                "dark": "{text.text-brand}"
+              }
+            }
           }
         },
         "text-secondary": {
-          "$value": "{0.color.gray.700}",
+          "$value": "{collection_primitives_color.color.gray.700}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.700}", "{0.color.gray.400}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.700}",
+                "dark": "{collection_primitives_color.color.gray.400}"
+              }
             }
           }
         },
         "text-critical": {
-          "$value": "{0.color.red.900}",
+          "$value": "{collection_primitives_color.color.red.900}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.900}", "{0.color.red.100}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.900}",
+                "dark": "{collection_primitives_color.color.red.100}"
+              }
+            }
           }
         },
         "text-contrast": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.black.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.black.100}"
+              }
             }
           }
         },
         "text-tertiary": {
-          "$value": "{0.color.gray.500}",
+          "$value": "{collection_primitives_color.color.gray.500}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.500}", "{0.color.gray.800}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.500}",
+                "dark": "{collection_primitives_color.color.gray.800}"
+              }
             }
           }
         }
       },
       "decorative": {
         "decorative-nine": {
-          "$value": "{0.color.purple.600}",
+          "$value": "{collection_primitives_color.color.purple.600}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.purple.600}", "{0.color.purple.300}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.purple.600}",
+                "dark": "{collection_primitives_color.color.purple.300}"
+              }
             }
           }
         },
         "decorative-six": {
           "$value": "#ffcbb7",
           "$extensions": {
-            "com.figma": { "modes": ["#ffcbb7", "#ffede5"] }
+            "com.figma": { "modes": { "light": "#ffcbb7", "dark": "#ffede5" } }
           }
         },
         "decorative-ten": {
-          "$value": "{0.color.purple.400}",
+          "$value": "{collection_primitives_color.color.purple.400}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.purple.400}", "{0.color.purple.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.purple.400}",
+                "dark": "{collection_primitives_color.color.purple.100}"
+              }
             }
           }
         },
         "decorative-eight": {
-          "$value": "{0.color.red.300}",
+          "$value": "{collection_primitives_color.color.red.300}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.300}", "{0.color.red.100}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.300}",
+                "dark": "{collection_primitives_color.color.red.100}"
+              }
+            }
           }
         },
         "decorative-seven": {
-          "$value": "{0.color.red.600}",
+          "$value": "{collection_primitives_color.color.red.600}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.600}", "{0.color.red.300}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.600}",
+                "dark": "{collection_primitives_color.color.red.300}"
+              }
+            }
           }
         },
         "decorative-five": {
-          "$value": "{0.color.yellow.700}",
+          "$value": "{collection_primitives_color.color.yellow.700}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.yellow.700}", "{0.color.yellow.400}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.yellow.700}",
+                "dark": "{collection_primitives_color.color.yellow.400}"
+              }
             }
           }
         },
         "decorative-four": {
-          "$value": "{0.color.yellow.400}",
+          "$value": "{collection_primitives_color.color.yellow.400}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.yellow.400}", "{0.color.yellow.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.yellow.400}",
+                "dark": "{collection_primitives_color.color.yellow.100}"
+              }
             }
           }
         },
         "decorative-three": {
           "$value": "#def358",
           "$extensions": {
-            "com.figma": { "modes": ["#def358", "#def358"] }
+            "com.figma": { "modes": { "light": "#def358", "dark": "#def358" } }
           }
         },
         "decorative-two": {
-          "$value": "{0.color.green.400}",
+          "$value": "{collection_primitives_color.color.green.400}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.green.400}", "{0.color.green.800}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.green.400}",
+                "dark": "{collection_primitives_color.color.green.800}"
+              }
             }
           }
         },
         "decorative-one": {
-          "$value": "{0.color.green.600}",
+          "$value": "{collection_primitives_color.color.green.600}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.green.600}", "{0.color.green.200}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.green.600}",
+                "dark": "{collection_primitives_color.color.green.200}"
+              }
             }
           }
         }
       },
       "surface": {
         "surface-contrast": {
-          "$value": "{0.color.gray.1000}",
+          "$value": "{collection_primitives_color.color.gray.1000}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.1000}", "{0.color.gray.300}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.1000}",
+                "dark": "{collection_primitives_color.color.gray.300}"
+              }
             }
           }
         },
         "surface-brand": {
-          "$value": "{0.color.gray.1000}",
+          "$value": "{collection_primitives_color.color.gray.1000}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.1000}", "{0.color.gray.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.1000}",
+                "dark": "{collection_primitives_color.color.gray.100}"
+              }
             }
           }
         },
         "surface-strong": {
-          "$value": "{0.color.gray.600}",
+          "$value": "{collection_primitives_color.color.gray.600}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.600}", "{0.color.gray.300}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.600}",
+                "dark": "{collection_primitives_color.color.gray.300}"
+              }
             }
           }
         },
         "surface-neutral": {
-          "$value": "{0.color.gray.300}",
+          "$value": "{collection_primitives_color.color.gray.300}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.300}", "{0.color.gray.700}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.300}",
+                "dark": "{collection_primitives_color.color.gray.700}"
+              }
             }
           }
         },
         "surface-subtle": {
-          "$value": "{0.color.gray.100}",
+          "$value": "{collection_primitives_color.color.gray.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.100}", "{0.color.gray.700}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.100}",
+                "dark": "{collection_primitives_color.color.gray.700}"
+              }
             }
           }
         },
         "surface-default": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.gray.800}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.gray.800}"
+              }
             }
           }
         },
         "surface-destructive": {
-          "$value": "{0.color.red.100}",
+          "$value": "{collection_primitives_color.color.red.100}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.100}", "{0.color.red.900}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.100}",
+                "dark": "{collection_primitives_color.color.red.900}"
+              }
+            }
           }
         }
       },
       "border": {
         "border-contrast": {
-          "$value": "{0.color.gray.1000}",
+          "$value": "{collection_primitives_color.color.gray.1000}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.1000}", "{0.color.gray.300}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.1000}",
+                "dark": "{collection_primitives_color.color.gray.300}"
+              }
             }
           }
         },
         "border-brand": {
-          "$value": "{0.color.gray.900}",
+          "$value": "{collection_primitives_color.color.gray.900}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.900}", "{0.color.gray.200}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.900}",
+                "dark": "{collection_primitives_color.color.gray.200}"
+              }
             }
           }
         },
         "border-primary": {
-          "$value": "{0.color.gray.300}",
+          "$value": "{collection_primitives_color.color.gray.300}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.300}", "{0.color.gray.100}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.300}",
+                "dark": "{collection_primitives_color.color.gray.100}"
+              }
             }
           }
         },
         "border-strong": {
-          "$value": "{0.color.gray.800}",
+          "$value": "{collection_primitives_color.color.gray.800}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.800}", "{0.color.gray.500}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.800}",
+                "dark": "{collection_primitives_color.color.gray.500}"
+              }
             }
           }
         },
         "border-subtle": {
-          "$value": "{0.color.gray.200}",
+          "$value": "{collection_primitives_color.color.gray.200}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.200}", "{0.color.gray.500}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.200}",
+                "dark": "{collection_primitives_color.color.gray.500}"
+              }
             }
           }
         },
         "border-neutral": {
-          "$value": "{0.color.gray.400}",
+          "$value": "{collection_primitives_color.color.gray.400}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.gray.400}", "{0.color.gray.600}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.gray.400}",
+                "dark": "{collection_primitives_color.color.gray.600}"
+              }
             }
           }
         }
@@ -385,7 +489,10 @@
           "$value": "{text.text-contrast}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{text.text-contrast}", "{text.text-contrast}"]
+              "modes": {
+                "light": "{text.text-contrast}",
+                "dark": "{text.text-contrast}"
+              }
             }
           }
         },
@@ -393,21 +500,32 @@
           "$value": "{text.text-critical}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{text.text-critical}", "{text.text-critical}"]
+              "modes": {
+                "light": "{text.text-critical}",
+                "dark": "{text.text-critical}"
+              }
             }
           }
         },
         "icon-link": {
           "$value": "{text.text-link}",
           "$extensions": {
-            "com.figma": { "modes": ["{text.text-link}", "{text.text-link}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{text.text-link}",
+                "dark": "{text.text-link}"
+              }
+            }
           }
         },
         "icon-tertiary": {
           "$value": "{text.text-tertiary}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{text.text-tertiary}", "{text.text-tertiary}"]
+              "modes": {
+                "light": "{text.text-tertiary}",
+                "dark": "{text.text-tertiary}"
+              }
             }
           }
         },
@@ -415,7 +533,10 @@
           "$value": "{text.text-secondary}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{text.text-secondary}", "{text.text-secondary}"]
+              "modes": {
+                "light": "{text.text-secondary}",
+                "dark": "{text.text-secondary}"
+              }
             }
           }
         },
@@ -423,25 +544,34 @@
           "$value": "{text.text-primary}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{text.text-primary}", "{text.text-primary}"]
+              "modes": {
+                "light": "{text.text-primary}",
+                "dark": "{text.text-primary}"
+              }
             }
           }
         },
         "icon-on-brand": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.gray.1000}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.gray.1000}"
+              }
             }
           }
         }
       },
       "system": {
         "focus-ring": {
-          "$value": "{0.color.purple.500}",
+          "$value": "{collection_primitives_color.color.purple.500}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.purple.500}", "{0.color.purple.200}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.purple.500}",
+                "dark": "{collection_primitives_color.color.purple.200}"
+              }
             }
           }
         },
@@ -449,49 +579,69 @@
           "$value": "rgba(32, 32, 32, 0.9000)",
           "$extensions": {
             "com.figma": {
-              "modes": ["rgba(32, 32, 32, 0.9000)", "rgba(32, 32, 32, 0.9000)"]
+              "modes": {
+                "light": "rgba(32, 32, 32, 0.9000)",
+                "dark": "rgba(32, 32, 32, 0.9000)"
+              }
             }
           }
         }
       },
       "status": {
         "info": {
-          "$value": "{0.color.purple.700}",
+          "$value": "{collection_primitives_color.color.purple.700}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.purple.700}", "{0.color.purple.400}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.purple.700}",
+                "dark": "{collection_primitives_color.color.purple.400}"
+              }
             }
           }
         },
         "status-critical": {
-          "$value": "{0.color.red.700}",
+          "$value": "{collection_primitives_color.color.red.700}",
           "$extensions": {
-            "com.figma": { "modes": ["{0.color.red.700}", "{0.color.red.400}"] }
+            "com.figma": {
+              "modes": {
+                "light": "{collection_primitives_color.color.red.700}",
+                "dark": "{collection_primitives_color.color.red.400}"
+              }
+            }
           }
         },
         "status-warning": {
-          "$value": "{0.color.yellow.600}",
+          "$value": "{collection_primitives_color.color.yellow.600}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.yellow.600}", "{0.color.yellow.300}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.yellow.600}",
+                "dark": "{collection_primitives_color.color.yellow.300}"
+              }
             }
           }
         },
         "status-success": {
-          "$value": "{0.color.green.700}",
+          "$value": "{collection_primitives_color.color.green.700}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.green.700}", "{0.color.green.400}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.green.700}",
+                "dark": "{collection_primitives_color.color.green.400}"
+              }
             }
           }
         }
       },
       "page": {
         "page-default": {
-          "$value": "{0.color.white.100}",
+          "$value": "{collection_primitives_color.color.white.100}",
           "$extensions": {
             "com.figma": {
-              "modes": ["{0.color.white.100}", "{0.color.gray.900}"]
+              "modes": {
+                "light": "{collection_primitives_color.color.white.100}",
+                "dark": "{collection_primitives_color.color.gray.900}"
+              }
             }
           }
         }
