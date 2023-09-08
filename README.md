@@ -26,7 +26,7 @@ Figma variable collections are merged into a single JSON file to support cross-c
         "$extensions": {
           "org.example": {
             "modes": {
-              "light: "{collection_primitives_color.color.red-300}",
+              "light": "{collection_primitives_color.color.red-300}",
               "dark": "{collection_primitives_color.color.red-500}"
             }
           }
