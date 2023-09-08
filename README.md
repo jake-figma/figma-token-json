@@ -8,14 +8,14 @@ Figma variable collections are merged into a single JSON file to support cross-c
 
 ```json
 {
-  "collection.primitives_color": {
+  "collection_primitives_color": {
     "color": {
       "$type": "color",
       "red-300": { "$value": "#C00" },
       "red-500": { "$value": "#F00" }
     }
   },
-  "collection.semantic_color": {
+  "collection_semantic_color": {
     "$extensions": {
       "org.example": { "modes": ["light", "dark"] }
     },
