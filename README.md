@@ -3,44 +3,32 @@ A JSON representation for Figma Variables following the [W3C Tokens spec](https:
 
 ## Overview
 
-Figma variable collections are merged into a single JSON file to support cross-collection aliasing. Each collection is numerically represented incrementally (0, 1, 2, etc) at the root of the JSON object. Example of how you would model two collections, "primitive" and, "semantic" where the semantic has two modes "Light" and "Dark":
+Figma variable collections are merged into a single JSON file to support cross-collection aliasing. Each collection is represented with a snake cased key at the root of the JSON object. Example of how you would model two collections, "primitive" and, "semantic" where the semantic has two modes "light" and "dark":
 
 
 ```json
 {
-  "0": {
-    "$extensions": {
-      "com.figma": {
-        "collectionId": "VariableCollectionId:0:1",
-        "fileId": "012340123401234",
-        "type": "collection",
-        "name": "Primitives: Color",
-        "modes": ["Default"]
-      }
-    },
+  "collection.primitives_color": {
     "color": {
       "$type": "color",
       "red-300": { "$value": "#C00" },
       "red-500": { "$value": "#F00" }
     }
   },
-  "1": {
+  "collection.semantic_color": {
     "$extensions": {
-      "com.figma": {
-        "collectionId": "VariableCollectionId:0:2",
-        "fileId": "012340123401234",
-        "type": "collection",
-        "name": "Semantic: Color",
-        "modes": ["Light", "Dark"]
-      }
+      "org.example": { "modes": ["light", "dark"] }
     },
     "color": {
       "$type": "color",
       "danger": {
-        "$value": "{0.color.red-300}",
+        "$value": "{collection_primitives_color.color.red-300}",
         "$extensions": {
-          "com.figma": {
-            "modes": ["{0.color.red-300}", "{0.color.red-500}"]
+          "org.example": {
+            "modes": {
+              "light: "{collection_primitives_color.color.red-300}",
+              "dark": "{collection_primitives_color.color.red-500}"
+            }
           }
         }
       }
@@ -49,4 +37,4 @@ Figma variable collections are merged into a single JSON file to support cross-c
 }
 ```
 
-[`$extensions`](https://tr.designtokens.org/format/#extensions-0) is used to describe Figma modes and Figma metadata.
+[`$extensions`](https://tr.designtokens.org/format/#extensions-0) is used to describe Figma modes and Figma metadata. `org.example` would be the customer's namespace.
