@@ -3,8 +3,9 @@
   "id": "1225498390710809904",
   "api": "1.0.0",
   "editorType": ["figma", "dev"],
-  "capabilities": ["inspect"],
+  "capabilities": ["inspect", "codegen"],
   "permissions": [],
+  "codegenLanguages": [{ "label": "Tokens", "value": "tokens" }],
   "main": "code.js",
   "networkAccess": { "allowedDomains": ["none"] }
 }

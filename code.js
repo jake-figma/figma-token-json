@@ -1,7 +1,84 @@
 const KEY_PREFIX_COLLECTION = `@`;
 const NAMESPACE = "org.example";
 
-exportToJSON();
+if (figma.mode === "codegen") {
+  figma.codegen.on("generate", (event) => {
+    return new Promise((resolve, reject) => {
+      const object = {};
+      for (let type in event.node.boundVariables) {
+        object[type] = [];
+        recurseVariables(event.node.boundVariables[type], object[type]);
+      }
+      resolve(
+        Object.keys(object).map((key) => ({
+          language: "JSON",
+          code: JSON.stringify(object[key], null, 2),
+          title: `Variables (${key})`,
+        }))
+      );
+    });
+  });
+} else {
+  exportToJSON();
+}
+
+function recurseVariables(variable, list) {
+  const variables = Array.isArray(variable) ? variable : [variable];
+  variables.forEach((variable) => {
+    if (!variable || !variable.id) return;
+    const { name, variableCollectionId, resolvedType, valuesByMode } =
+      figma.variables.getVariableById(variable.id);
+    const collection =
+      figma.variables.getVariableCollectionById(variableCollectionId);
+    const modes = collection.modes;
+    const isSingleMode = modes.length === 1;
+    const item = {
+      token: [
+        `${KEY_PREFIX_COLLECTION}${sanitizeName(collection.name)}`,
+        name,
+      ].join("/"),
+      collection: collection.name,
+      name,
+      type: resolvedType,
+    };
+    if (!isSingleMode) {
+      item.modes = {};
+    }
+    const modeIds = Object.keys(valuesByMode);
+    modeIds.forEach((modeId) => {
+      const mode = isSingleMode
+        ? "Default"
+        : modes.find((mode) => mode.modeId === modeId).name;
+      let value = valuesByMode[modeId];
+      if (value.type === "VARIABLE_ALIAS") {
+        const variable = figma.variables.getVariableById(value.id);
+        const v = {};
+        recurseVariables(variable, v);
+        if (isSingleMode) {
+          item.value = v;
+        } else {
+          item.modes[mode] = v;
+        }
+      } else {
+        if (resolvedType === "COLOR") {
+          value = rgbToHex(value);
+        }
+        if (isSingleMode) {
+          item.value = value;
+        } else {
+          item.modes[mode] = value;
+        }
+      }
+    });
+    if (Array.isArray(list)) {
+      list.push(item);
+    } else {
+      for (let key in item) {
+        list[key] = item[key];
+      }
+    }
+  });
+}
 
 function exportToJSON() {
   const collections = figma.variables.getLocalVariableCollections();
@@ -13,13 +90,10 @@ function exportToJSON() {
       (object[idToKey[collection.id]] = collectionAsJSON(idToKey, collection))
   );
 
-  figma.showUI(
-    `<pre style="font-size: 8px">${JSON.stringify(object, null, 2)}</pre>`,
-    {
-      width: 500,
-      height: 700,
-    }
-  );
+  figma.showUI(`<pre>${JSON.stringify(object, null, 2)}</pre>`, {
+    width: 500,
+    height: 700,
+  });
 }
 
 function collectionAsJSON(collectionIdToKeyMap, { modes, variableIds }) {
@@ -64,7 +138,7 @@ function valueToJSON(value, resolvedType, collectionIdToKeyMap) {
   if (value.type === "VARIABLE_ALIAS") {
     const variable = figma.variables.getVariableById(value.id);
     const prefix = collectionIdToKeyMap[variable.variableCollectionId];
-    return `{${prefix}_${variable.name.replace(/\//g, ".")}}`;
+    return `{${prefix}.${variable.name.replace(/\//g, ".")}}`;
   }
   return resolvedType === "COLOR" ? rgbToHex(value) : value;
 }
@@ -96,16 +170,14 @@ function sanitizeName(name) {
 }
 
 function rgbToHex({ r, g, b, a }) {
-  if (a !== 1) {
-    return `rgba(${[r, g, b]
-      .map((n) => Math.round(n * 255))
-      .join(", ")}, ${a.toFixed(4)})`;
-  }
   const toHex = (value) => {
     const hex = Math.round(value * 255).toString(16);
     return hex.length === 1 ? "0" + hex : hex;
   };
 
-  const hex = [toHex(r), toHex(g), toHex(b)].join("");
-  return `#${hex}`;
+  const hex = [toHex(r), toHex(g), toHex(b)];
+  if (a !== 1) {
+    hex.push(toHex(a));
+  }
+  return `#${hex.join("")}`;
 }
